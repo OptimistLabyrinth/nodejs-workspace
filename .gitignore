@@ -1,0 +1,23 @@
+node_modules/
+
+# log files
+**/*.log
+**/*.logs
+
+### OS Windows ###
+# thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+# shortcuts
+*.lnk
+
+### OS X ###
+.DS_Store
+
+### JetBrains IDE ###
+.idea/
+
+### VS Code IDE ###
+.vscode/

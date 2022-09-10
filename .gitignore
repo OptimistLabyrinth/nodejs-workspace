@@ -21,3 +21,6 @@ ehthumbs_vista.db
 
 ### VS Code IDE ###
 .vscode/
+
+# default template of express-generator
+from-express-generator/

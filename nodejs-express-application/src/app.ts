@@ -1,33 +1,18 @@
 import express from 'express'
-import dotenv from 'dotenv'
 import morgan from 'morgan'
-import v1Router from './v1'
-dotenv.config()
+import errorHandler from './errorHandler'
+import rootRouter from './routes/root'
+import v1Router from './routes/v1'
 
 const app = express()
-const port = process.env.PORT || 3000
 
-async function startServe() {
-  // * middlewares
-  app.use(
-    morgan(':method :url :status :res[content-length] - :response-time ms'),
-  )
-  app.use(express.static('public'))
+// * middlewares
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
+app.use(express.static('public'))
 
-  // * routers
-  app.get('/', (req, res) => res.sendFile('index.html'))
-  app.use('/v1', v1Router)
+// * routers
+app.get('/', rootRouter)
+app.use('/v1', v1Router)
+app.use(errorHandler)
 
-  // * serve start
-  app.listen(port)
-}
-
-startServe()
-  .then(() =>
-    // eslint-disable-next-line no-console
-    console.log(`[server]: Server is running at https://localhost:${port}`),
-  )
-  .catch((e) => {
-    // eslint-disable-next-line no-console
-    console.error(e)
-  })
+export default app

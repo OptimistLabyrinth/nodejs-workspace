@@ -1,5 +1,12 @@
+coverage/
 dist/
 node_modules/
+
+# environment variables
+**/.env
+**/.env.development*
+**/.env.production*
+**/.env.test*
 
 # environment variables
 **/.env

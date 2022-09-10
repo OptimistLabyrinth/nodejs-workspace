@@ -1,7 +1,7 @@
 import { createInterface } from 'readline'
 import process from 'process'
 
-function question(sentence: string) {
+function question(sentence: string): Promise<string> {
   const readLineInterface = createInterface({
     input: process.stdin,
     output: process.stdout,

@@ -2,7 +2,7 @@
   "name": "nodejs-express-application",
   "version": "1.0.0",
   "scripts": {
-    "start": "yarn start:compile && yarn start:run",
+    "start": "yarn start:run",
     "start:compile": "tsc",
     "start:run": "NODE_ENV=production node dist/index.js",
     "start:dev": "NODE_ENV=development tsc-watch --onSuccess \"node dist/index.js\"",
@@ -18,7 +18,8 @@
   "author": "OptimistLabyrinth <keesung0705@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.0.2"
+    "dotenv": "^16.0.2",
+    "mongoose": "^6.7.0"
   },
   "devDependencies": {
     "@types/jest": "^29.0.0",

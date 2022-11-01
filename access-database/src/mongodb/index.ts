@@ -5,8 +5,18 @@ import cascadeOperations from './schema/deleteRemoveCascade'
 
 function mongodbMain() {
   try {
-    console.log('access mongodb')
-    mongoose.connect('mongodb://127.0.0.1:27017/test', () => {
+    const mongoUrlToConnect = databaseMongoUrl()
+    if (!mongoUrlToConnect) {
+      console.log('mongodb configuration failed')
+      return
+    }
+    console.log(`access mongodb - ${mongoUrlToConnect}`)
+    mongoose.connect(mongoUrlToConnect, (err) => {
+      if (err) {
+        console.log('cannot connect to mongodb')
+        console.error(err)
+        return
+      }
       console.log('mongodb connected')
     })
     const connection = mongoose.connection
@@ -18,11 +28,16 @@ function mongodbMain() {
       })
       await Promise.all(dropCollectionRequests)
 
-      mongooseTest()
+      await mongooseTest()
+      await connection.destroy(true)
     })
   } catch (err) {
     console.error(err)
   }
+}
+
+function databaseMongoUrl(): string | undefined {
+  return process.env.DATABASE_MONGO_URL
 }
 
 async function mongooseTest() {

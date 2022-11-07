@@ -112,30 +112,65 @@
 
 // * ------------------------------------------------------------
 
-console.log('function 키워드를 사용하지 않을 수 없는 경우')
-function* generator() {
-  const arr = [1, 2, 3, 4, 5]
-  for (const value of arr) {
-    yield value
+// console.log('function 키워드를 사용하지 않을 수 없는 경우')
+// function* generator() {
+//   const arr = [1, 2, 3, 4, 5]
+//   for (const value of arr) {
+//     yield value
+//   }
+// }
+
+// const generatorInstance = generator();
+// console.log(generatorInstance.next().value)
+// console.log(generatorInstance.next().value)
+// console.log(generatorInstance.next().value)
+
+// console.log('객체 메서드에 generator 정의해서 사용할 때는 function 키워드가 필요하지 않다')
+// const generatorObject = {
+//   arr: [1, 2, 3, 4, 5],
+//   *generator2() {
+//     while (0 < this.arr.length) {
+//       yield this.arr.shift()
+//     }
+//   },
+// }
+
+// const generator2Instance = generatorObject.generator2()
+// console.log(generator2Instance.next().value)
+// console.log(generator2Instance.next().value)
+// console.log(generator2Instance.next().value)
+
+// * ------------------------------------------------------------
+
+console.log('클래스 메서드 선언 방식: 일반 메서ㄷ 선언 vs arrow function 선언')
+class A1 {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
+
+  getName = () => {
+    return this.name
+  }
+
+  getAge() {
+    return this.age
   }
 }
 
-const generatorInstance = generator();
-console.log(generatorInstance.next().value)
-console.log(generatorInstance.next().value)
-console.log(generatorInstance.next().value)
-
-console.log('객체 메서드에 generator 정의해서 사용할 때는 function 키워드가 필요하지 않다')
-const generatorObject = {
-  arr: [1, 2, 3, 4, 5],
-  *generator2() {
-    while (0 < this.arr.length) {
-      yield this.arr.shift()
-    }
-  },
+const a1 = new A1('A1', '1234');
+console.dir(a1)
+for (const prop in a1) {
+  console.log('     prop of a1:', prop)
 }
 
-const generator2Instance = generatorObject.generator2()
-console.log(generator2Instance.next().value)
-console.log(generator2Instance.next().value)
-console.log(generator2Instance.next().value)
+const obj = {
+  name: "obj",
+  age: '27',
+  getName: a1.getName,
+  getAge: a1.getAge
+}
+
+const [name, age] = [obj.getName(), obj.getAge()]
+console.log('name:', name)
+console.log('age:', age)

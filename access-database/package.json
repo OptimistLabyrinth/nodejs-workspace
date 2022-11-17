@@ -13,7 +13,7 @@
     "test:unit:dev": "jest --watch --forceExit test/unit",
     "test:e2e": "jest --forceExit test/e2e",
     "test:e2e:dev": "jest --watch --forceExit test/e2e",
-    "lint": "eslint --fix ."
+    "lint": "eslint --config .eslintrc.js --fix ."
   },
   "author": "OptimistLabyrinth <keesung0705@gmail.com>",
   "license": "MIT",
@@ -27,8 +27,6 @@
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "eslint": "^8.23.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "jest": "^29.0.2",
     "prettier": "^2.7.1",
     "ts-jest": "^29.0.0",

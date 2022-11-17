@@ -236,11 +236,9 @@ const runWithTransaction = async <T>(
   const session = await mongoose.startSession(clientSessionOption)
   try {
     let result: T | undefined = undefined
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     await session.withTransaction(async () => {
       result = await txFunc(session)
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
     }, transactionOptions)
     if (!result) {

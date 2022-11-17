@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import mongoose from 'mongoose'
+import mongoose, { ClientSession, ClientSessionOptions } from 'mongoose'
+import { TransactionOptions, ReadPreference, ReadPreferenceMode } from 'mongodb'
 import { models } from './schema'
-import cascadeOperations from './schema/deleteRemoveCascade'
 
 function mongodbMain() {
   try {
@@ -29,6 +29,7 @@ function mongodbMain() {
       await Promise.all(dropCollectionRequests)
 
       await mongooseTest()
+      await mongoTransactionTest()
       await connection.destroy(true)
     })
   } catch (err) {
@@ -205,6 +206,55 @@ async function mongooseTest() {
   console.log('afterDeleteAddress2Publisher:', afterDeleteAddress2Publisher)
 
   console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- -----')
+}
+
+const mongoTransactionTest = async () => {
+  const result = await runWithTransaction(tsFunc)
+  console.dir({ result })
+}
+
+const tsFunc = async (session: ClientSession) => {
+  console.dir(session)
+  return 33
+}
+
+const runWithTransaction = async <T>(
+  txFunc: (session: ClientSession) => Promise<T>,
+): Promise<T> => {
+  const transactionOptions: TransactionOptions = {
+    readConcern: { level: 'snapshot' },
+    writeConcern: { w: 'majority' },
+    readPreference: new ReadPreference(ReadPreferenceMode.primary),
+  }
+
+  const clientSessionOption: ClientSessionOptions = {
+    defaultTransactionOptions: {
+      readPreference: new ReadPreference(ReadPreferenceMode.primary),
+    },
+  }
+
+  const session = await mongoose.startSession(clientSessionOption)
+  try {
+    let result: T | undefined = undefined
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    await session.withTransaction(async () => {
+      result = await txFunc(session)
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+    }, transactionOptions)
+    if (!result) {
+      throw new Error('cannot get result from transaction')
+    }
+    return result
+  } catch (error) {
+    console.error(
+      `The transaction was aborted due to an unexpected error: ${error}`,
+    )
+    throw error
+  } finally {
+    await session.endSession()
+  }
 }
 
 export { mongodbMain }

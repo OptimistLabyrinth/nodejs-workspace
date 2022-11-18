@@ -321,6 +321,25 @@ const rulesTypescriptEslint = {
   '@typescript-eslint/ban-ts-comment': OFF,
 }
 
+const rulesImport = {
+  'import/order': [
+    WARN,
+    {
+      'groups': [
+        'builtin',
+        'external',
+        'internal',
+        'unknown',
+        'parent',
+        'sibling',
+        'index',
+        'object',
+        'type',
+      ],
+    },
+  ],
+}
+
 module.exports = {
   'root': true,
   'env': {
@@ -332,10 +351,14 @@ module.exports = {
     'ecmaVersion': 'latest',
     'sourceType': 'module',
   },
-  'plugins': [ '@typescript-eslint' ],
+  'plugins': [
+    '@typescript-eslint',
+    'import',
+  ],
   'extends': [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:import/recommended',
   ],
   'overrides': [],
   'ignorePatterns': [
@@ -346,8 +369,17 @@ module.exports = {
     'tsconfig.json',
     'yarn.lock',
   ],
+  'settings': {
+    'import/resolver': {
+      'typescript': {
+        'alwaysTryTypes': true,
+        'project': '.',
+      },
+    },
+  },
   'rules': {
     ...rulesEslintLayoutFormatting,
     ...rulesTypescriptEslint,
+    ...rulesImport,
   },
 }

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
+import cascadeOperations from './deleteRemoveCascade'
 import type { AddressType } from './address'
 import type { BookType } from './book'
-import cascadeOperations from './deleteRemoveCascade'
 
 interface PublisherType {
   _id: mongoose.Schema.Types.ObjectId
@@ -25,7 +25,7 @@ const publisherSchema = new mongoose.Schema<PublisherType>({
     ref: 'Address',
   },
   books: {
-    type: [mongoose.Schema.Types.ObjectId],
+    type: [ mongoose.Schema.Types.ObjectId ],
     ref: 'Book',
   },
   createdAt: {

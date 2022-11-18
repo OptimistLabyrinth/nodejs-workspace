@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import mongoose from 'mongoose'
-import { models } from '.'
 import { AuthorType } from './author'
 import { BookType } from './book'
 import { PublisherType } from './publisher'
+import { models } from '.'
 
 async function onDeleteAuthor(
   author:

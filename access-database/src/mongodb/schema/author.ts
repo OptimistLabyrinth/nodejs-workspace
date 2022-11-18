@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
+import cascadeOperations from './deleteRemoveCascade'
 import type { AddressType } from './address'
 import type { BookType } from './book'
-import cascadeOperations from './deleteRemoveCascade'
 
 interface AuthorType {
   _id: mongoose.Schema.Types.ObjectId
@@ -29,7 +29,7 @@ const authorSchema = new mongoose.Schema<AuthorType>({
     ref: 'Address',
   },
   books: {
-    type: [mongoose.Schema.Types.ObjectId],
+    type: [ mongoose.Schema.Types.ObjectId ],
     ref: 'Book',
   },
   createdAt: {

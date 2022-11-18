@@ -1,5 +1,5 @@
-import { mongodbMain } from './mongodb'
 import dotenv from 'dotenv'
+import { mongodbMain } from './mongodb'
 dotenv.config()
 
 main()

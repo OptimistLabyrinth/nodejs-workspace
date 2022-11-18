@@ -319,6 +319,19 @@ const rulesEslintLayoutFormatting = {
 const rulesTypescriptEslint = {
   // Typescript Eslint Rules -> https://typescript-eslint.io/rules/
   '@typescript-eslint/ban-ts-comment': OFF,
+  '@typescript-eslint/type-annotation-spacing': [
+    WARN,
+    {
+      'before': true,
+      'after': true,
+      'overrides': {
+        'colon': {
+          'before': false,
+          'after': true,
+        },
+      },
+    },
+  ],
 }
 
 const rulesImport = {
@@ -336,6 +349,11 @@ const rulesImport = {
         'object',
         'type',
       ],
+      'newlines-between': 'never',
+      'alphabetize': {
+        'order': 'asc',
+        'caseInsensitive': true,
+      },
     },
   ],
 }

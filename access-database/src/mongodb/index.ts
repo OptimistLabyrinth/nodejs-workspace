@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-import mongoose, { ClientSession, ClientSessionOptions } from 'mongoose'
 import { TransactionOptions, ReadPreference, ReadPreferenceMode } from 'mongodb'
+import mongoose, { ClientSession, ClientSessionOptions } from 'mongoose'
 import { models } from './schema'
 
 function mongodbMain() {

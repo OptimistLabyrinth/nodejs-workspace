@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
-import type { AuthorType } from './author'
 import cascadeOperations from './deleteRemoveCascade'
 import { PublisherType } from './publisher'
+import type { AuthorType } from './author'
 
 interface BookType {
   _id: mongoose.Schema.Types.ObjectId
@@ -23,7 +23,7 @@ const bookSchema = new mongoose.Schema<BookType>({
     required: true,
   },
   authors: {
-    type: [mongoose.Schema.Types.ObjectId],
+    type: [ mongoose.Schema.Types.ObjectId ],
     ref: 'Author',
   },
   publisher: {

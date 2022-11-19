@@ -4,6 +4,7 @@ import mongoose, { ClientSession, ClientSessionOptions } from 'mongoose'
 import { models } from './schema'
 
 function mongodbMain() {
+  // mongoose.set('debug', true)
   try {
     const mongoUrlToConnect = databaseMongoUrl()
     if (!mongoUrlToConnect) {
@@ -204,11 +205,11 @@ async function mongooseTest() {
   console.log('deletedBook1:', deletedBook1)
   console.log('afterDeleteAddress1Author1:', afterDeleteAddress1Author1)
   console.log('afterDeleteAddress2Publisher:', afterDeleteAddress2Publisher)
-
-  console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- -----')
 }
 
 const mongoTransactionTest = async () => {
+  console.log('----- ----- ----- ----- ----- ----- ----- ----- ----- -----')
+  console.log('          < Transaction Helper Method >')
   const result = await runWithTransaction(tsFunc)
   console.dir({ result })
 }

@@ -320,7 +320,7 @@ const rulesTypescriptEslint = {
   // Typescript Eslint Rules -> https://typescript-eslint.io/rules/
   '@typescript-eslint/ban-ts-comment': OFF,
   '@typescript-eslint/type-annotation-spacing': [
-    WARN,
+    defaultLevelLayoutFormatting,
     {
       'before': true,
       'after': true,
@@ -336,7 +336,7 @@ const rulesTypescriptEslint = {
 
 const rulesImport = {
   'import/order': [
-    WARN,
+    defaultLevelLayoutFormatting,
     {
       'groups': [
         'builtin',

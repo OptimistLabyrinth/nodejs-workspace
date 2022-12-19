@@ -1,5 +1,5 @@
-import dotenv from 'dotenv'
 import http from 'http'
+import dotenv from 'dotenv'
 import app from './app'
 dotenv.config()
 
@@ -12,11 +12,5 @@ export async function startServer() {
 }
 
 startServer()
-  .then(() =>
-    // eslint-disable-next-line no-console
-    console.log(`[server]: Server is running at https://localhost:${port}`),
-  )
-  .catch((e) => {
-    // eslint-disable-next-line no-console
-    console.error(e)
-  })
+  .then(() => console.log(`[server]: Server is running at https://localhost:${port}`))
+  .catch((e) => console.error(e))

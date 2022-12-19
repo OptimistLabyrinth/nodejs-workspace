@@ -26,8 +26,12 @@ const mockTargetFunc: (
   console.log('inside mockTargetFunc: this should not be shown when mocked')
 
   return {
-    func1() { return 3 },
-    func2() { return '777' },
+    func1() {
+      return 3
+    },
+    func2() {
+      return '777'
+    },
     authMW({ privilege }: { privilege?: number } = { privilege: 0 }): RequestHandler {
       return async (req: Request, res: Response, next: NextFunction) => {
         console.log('inside asyncMW of authMW: this should not be shown when mocked')

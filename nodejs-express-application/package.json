@@ -7,19 +7,21 @@
     "start:run": "NODE_ENV=production node dist/server.js",
     "start:dev": "NODE_ENV=development tsc-watch --onSuccess \"node dist/server.js\"",
     "clean": "rm -rf coverage dist",
-    "test": "jest --forceExit",
-    "test:dev": "jest --watch --forceExit",
-    "test:unit": "jest --forceExit test/unit",
-    "test:unit:dev": "jest --watch --forceExit test/unit",
-    "test:e2e": "jest --forceExit test/e2e",
-    "test:e2e:dev": "jest --watch --forceExit test/e2e",
+    "test": "NODE_ENV=test jest --detectOpenHandles --forceExit",
+    "test:dev": "NODE_ENV=test jest --watch --detectOpenHandles --forceExit",
+    "test:unit": "NODE_ENV=test jest --detectOpenHandles --forceExit test/unit",
+    "test:unit:dev": "NODE_ENV=test jest --watch --detectOpenHandles --forceExit test/unit",
+    "test:e2e": "NODE_ENV=test jest --detectOpenHandles --forceExit test/e2e",
+    "test:e2e:dev": "NODE_ENV=test jest --watch --detectOpenHandles --forceExit test/e2e",
     "lint": "eslint --fix ."
   },
   "author": "OptimistLabyrinth <keesung0705@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.2.1",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
+    "express-rate-limit": "^6.7.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {

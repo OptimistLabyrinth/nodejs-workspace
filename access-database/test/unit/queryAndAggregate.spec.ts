@@ -188,4 +188,27 @@ describe('pagination 테스트', () => {
     console.log(JSON.stringify(result, null, 2))
     expect(Array.isArray(result)).toBeTruthy()
   })
+
+  it('efficient pagination', async () => {
+    const allUsers = await User
+      .find()
+      .sort({ '_id': 1 })
+    console.dir({ allUsers })
+
+    const rowPerPage = 2
+    const page1 = await User
+      .find()
+      .sort({ '_id': 1 })
+      .limit(rowPerPage)
+    console.dir({ page1 })
+
+    const last_id = page1.at(-1)?._id
+    const page2 = await User
+      .find({
+        '_id': { $gt: last_id },
+      })
+      .sort({ '_id': 1 })
+      .limit(rowPerPage)
+    console.dir({ page2 })
+  })
 })

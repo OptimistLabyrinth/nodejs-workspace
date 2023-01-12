@@ -248,6 +248,13 @@ const rulesEslintLayoutFormatting = {
   ],
   'padded-blocks': [ defaultLevelLayoutFormatting, 'never' ],
   'padding-line-between-statements': OFF,
+  'prefer-arrow-callback': [
+    defaultLevelLayoutFormatting,
+    {
+      'allowNamedFunctions': true,
+      'allowUnboundThis': false,
+    },
+  ],
   // prettier: singleQuote
   'quotes': [
     defaultLevelLayoutFormatting,

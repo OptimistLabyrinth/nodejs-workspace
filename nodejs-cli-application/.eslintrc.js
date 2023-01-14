@@ -248,6 +248,13 @@ const rulesEslintLayoutFormatting = {
   ],
   'padded-blocks': [ defaultLevelLayoutFormatting, 'never' ],
   'padding-line-between-statements': OFF,
+  'prefer-arrow-callback': [
+    defaultLevelLayoutFormatting,
+    {
+      'allowNamedFunctions': true,
+      'allowUnboundThis': false,
+    },
+  ],
   // prettier: singleQuote
   'quotes': [
     defaultLevelLayoutFormatting,
@@ -320,7 +327,7 @@ const rulesTypescriptEslint = {
   // Typescript Eslint Rules -> https://typescript-eslint.io/rules/
   '@typescript-eslint/ban-ts-comment': OFF,
   '@typescript-eslint/type-annotation-spacing': [
-    defaultLevelLayoutFormatting,
+    WARN,
     {
       'before': true,
       'after': true,
@@ -336,7 +343,7 @@ const rulesTypescriptEslint = {
 
 const rulesImport = {
   'import/order': [
-    defaultLevelLayoutFormatting,
+    WARN,
     {
       'groups': [
         'builtin',

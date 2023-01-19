@@ -2,6 +2,7 @@ import dotenv from 'dotenv'
 import greeting from './greeting'
 import { DecoratorTestClass, PropertyDecoratorTest } from './something/decorator'
 import question from './utils/question'
+import { confusedAsyncAndNonAsync } from './something/confused-async-and-non-async'
 dotenv.config()
 
 async function main() {
@@ -11,11 +12,13 @@ async function main() {
   // const greetingMessage = greeting.run(answer)
   // console.log(greetingMessage)
 
-  const decoratorTestClass = new DecoratorTestClass()
-  decoratorTestClass.method('abcd')
-  const propertyDecoratorTest = new PropertyDecoratorTest()
-  const prev = propertyDecoratorTest.field
-  propertyDecoratorTest.field = '3'
+  // const decoratorTestClass = new DecoratorTestClass()
+  // decoratorTestClass.method('abcd')
+  // const propertyDecoratorTest = new PropertyDecoratorTest()
+  // const prev = propertyDecoratorTest.field
+  // propertyDecoratorTest.field = '3'
+
+  await confusedAsyncAndNonAsync()
 }
 
 main()

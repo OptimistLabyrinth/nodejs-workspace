@@ -3,6 +3,7 @@ import greeting from './greeting'
 import { DecoratorTestClass, PropertyDecoratorTest } from './something/decorator'
 import question from './utils/question'
 import { confusedAsyncAndNonAsync } from './something/confused-async-and-non-async'
+import { filterArrayByProperty } from './something/filter-array-by-property'
 dotenv.config()
 
 async function main() {
@@ -18,7 +19,8 @@ async function main() {
   // const prev = propertyDecoratorTest.field
   // propertyDecoratorTest.field = '3'
 
-  await confusedAsyncAndNonAsync()
+  // await confusedAsyncAndNonAsync()
+  filterArrayByProperty()
 }
 
 main()

@@ -4,6 +4,7 @@ import { DecoratorTestClass, PropertyDecoratorTest } from './something/decorator
 import question from './utils/question'
 import { confusedAsyncAndNonAsync } from './something/confused-async-and-non-async'
 import { filterArrayByProperty } from './something/filter-array-by-property'
+import handleDate from './something/handle-date'
 dotenv.config()
 
 async function main() {
@@ -20,7 +21,9 @@ async function main() {
   // propertyDecoratorTest.field = '3'
 
   // await confusedAsyncAndNonAsync()
-  filterArrayByProperty()
+  // filterArrayByProperty()
+
+  handleDate.setZeroSecondsZeroMilliseconds()
 }
 
 main()

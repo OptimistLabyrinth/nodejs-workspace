@@ -13,10 +13,12 @@
   "author": "OptimistLabyrinth <keesung0705@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.0.2"
+    "dotenv": "^16.0.2",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@types/jest": "^29.2.4",
+    "@types/lodash": "^4.14.194",
     "@types/node": "^18.7.16",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.46.1",

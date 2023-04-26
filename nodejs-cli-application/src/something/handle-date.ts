@@ -10,8 +10,17 @@ const setZeroSecondsZeroMilliseconds = () => {
   console.log(`new Date() after set 0 seconds 0 milliseconds -> ${str2}`)
 }
 
+const setZero = () => {
+  const today = new Date()
+  console.log('today ->', today)
+
+  const zero = new Date(0)
+  console.log('zero  ->', zero)
+}
+
 const handleDate = {
   setZeroSecondsZeroMilliseconds,
+  setZero,
 }
 
 export default handleDate

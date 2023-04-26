@@ -25,9 +25,10 @@ async function main() {
   // filterArrayByProperty()
 
   // handleDate.setZeroSecondsZeroMilliseconds()
+  handleDate.setZero()
 
-  usingLodash.parseInt()
-  usingLodash.isEmpty()
+  // usingLodash.parseInt()
+  // usingLodash.isEmpty()
 }
 
 main()

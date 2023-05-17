@@ -18,9 +18,20 @@ const setZero = () => {
   console.log('zero  ->', zero)
 }
 
+const addDays = () => {
+  const today = new Date('2400-05-25T12:34:56.000Z')
+  console.log('today (before):', today)
+  const copied = new Date(today)
+  console.log('today (copied):', copied)
+
+  today.setDate(today.getDate() + 10)
+  console.log('today (after) :', today)
+}
+
 const handleDate = {
   setZeroSecondsZeroMilliseconds,
   setZero,
+  addDays,
 }
 
 export default handleDate

@@ -25,7 +25,8 @@ async function main() {
   // filterArrayByProperty()
 
   // handleDate.setZeroSecondsZeroMilliseconds()
-  handleDate.setZero()
+  // handleDate.setZero()
+  handleDate.addDays()
 
   // usingLodash.parseInt()
   // usingLodash.isEmpty()

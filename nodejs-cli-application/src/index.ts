@@ -6,6 +6,7 @@ import { confusedAsyncAndNonAsync } from './something/confused-async-and-non-asy
 import { filterArrayByProperty } from './something/filter-array-by-property'
 import handleDate from './something/handle-date'
 import handleMoment from './something/handle-moment'
+import handleNumber from './something/handle-number'
 import usingLodash from './something/using-lodash'
 
 dotenv.config()
@@ -30,7 +31,9 @@ async function main() {
   // handleDate.setZero()
   // handleDate.addDays()
 
-  handleMoment.test()
+  // handleMoment.test()
+
+  handleNumber.numberRounding()
 
   // usingLodash.parseInt()
   // usingLodash.isEmpty()

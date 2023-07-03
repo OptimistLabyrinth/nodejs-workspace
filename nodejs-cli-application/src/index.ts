@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 import greeting from './greeting'
 import { DecoratorTestClass, PropertyDecoratorTest } from './something/decorator'
 import question from './utils/question'
-import { confusedAsyncAndNonAsync } from './something/confused-async-and-non-async'
+import confusedAsyncAndNonAsync from './something/confused-async-and-non-async'
 import handleArray from './something/handle-array'
 import handleDate from './something/handle-date'
 import handleMoment from './something/handle-moment'
@@ -24,9 +24,11 @@ async function main() {
   // const prev = propertyDecoratorTest.field
   // propertyDecoratorTest.field = '3'
 
-  // await confusedAsyncAndNonAsync()
+  // await confusedAsyncAndNonAsync.main()
+  await confusedAsyncAndNonAsync.parallelExecution()
+
   // handleArray.filterArrayByProperty()
-  handleArray.splice()
+  // handleArray.splice()
 
   // handleDate.setZeroSecondsZeroMilliseconds()
   // handleDate.setZero()

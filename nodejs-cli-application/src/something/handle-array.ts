@@ -3,7 +3,7 @@ type EachData = {
   data: unknown
 }
 
-export const filterArrayByProperty = () => {
+const filterArrayByProperty = () => {
   const previousData: EachData[] = [
     {
       id: 'key-01',
@@ -57,3 +57,22 @@ export const filterArrayByProperty = () => {
     .map((x) => x.id)
   console.dir(dataToRemove)
 }
+
+const splice = () => {
+  const target = [ 'aaa', 'bbb', '123', '456', '!!', '**' ]
+  const stringToFind = '123'
+  const indexRemoveStart = target.findIndex((value) => value === stringToFind)
+  if (indexRemoveStart === -1) {
+    throw new Error(`${stringToFind} is not in the target array`)
+  }
+  const removed = target.splice(indexRemoveStart, 2, '777', '888')
+
+  console.log(JSON.stringify({ target, removed }, null, 2))
+}
+
+const handleArray = {
+  filterArrayByProperty,
+  splice,
+}
+
+export default handleArray

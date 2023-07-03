@@ -3,7 +3,7 @@ import greeting from './greeting'
 import { DecoratorTestClass, PropertyDecoratorTest } from './something/decorator'
 import question from './utils/question'
 import { confusedAsyncAndNonAsync } from './something/confused-async-and-non-async'
-import { filterArrayByProperty } from './something/filter-array-by-property'
+import handleArray from './something/handle-array'
 import handleDate from './something/handle-date'
 import handleMoment from './something/handle-moment'
 import handleNumber from './something/handle-number'
@@ -25,7 +25,8 @@ async function main() {
   // propertyDecoratorTest.field = '3'
 
   // await confusedAsyncAndNonAsync()
-  // filterArrayByProperty()
+  // handleArray.filterArrayByProperty()
+  handleArray.splice()
 
   // handleDate.setZeroSecondsZeroMilliseconds()
   // handleDate.setZero()
@@ -33,7 +34,7 @@ async function main() {
 
   // handleMoment.test()
 
-  handleNumber.numberRounding()
+  // handleNumber.numberRounding()
 
   // usingLodash.parseInt()
   // usingLodash.isEmpty()

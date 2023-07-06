@@ -25,7 +25,7 @@ async function main() {
   // propertyDecoratorTest.field = '3'
 
   // await confusedAsyncAndNonAsync.main()
-  await confusedAsyncAndNonAsync.parallelExecution()
+  // await confusedAsyncAndNonAsync.parallelExecution()
 
   // handleArray.filterArrayByProperty()
   // handleArray.splice()
@@ -33,6 +33,7 @@ async function main() {
   // handleDate.setZeroSecondsZeroMilliseconds()
   // handleDate.setZero()
   // handleDate.addDays()
+  handleDate.momentMultiTimezone()
 
   // handleMoment.test()
 

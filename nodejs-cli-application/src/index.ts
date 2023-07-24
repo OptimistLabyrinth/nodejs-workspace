@@ -7,6 +7,7 @@ import handleArray from './something/handle-array'
 import handleDate from './something/handle-date'
 import handleMoment from './something/handle-moment'
 import handleNumber from './something/handle-number'
+import testCondition from './something/test-condition'
 import usingLodash from './something/using-lodash'
 
 dotenv.config()
@@ -33,11 +34,14 @@ async function main() {
   // handleDate.setZeroSecondsZeroMilliseconds()
   // handleDate.setZero()
   // handleDate.addDays()
-  handleDate.momentMultiTimezone()
+  // handleDate.momentMultiTimezone()
 
   // handleMoment.test()
 
   // handleNumber.numberRounding()
+
+  testCondition.elementInArray()
+  testCondition.keyInObject()
 
   // usingLodash.parseInt()
   // usingLodash.isEmpty()

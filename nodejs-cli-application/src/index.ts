@@ -35,13 +35,14 @@ async function main() {
   // handleDate.setZero()
   // handleDate.addDays()
   // handleDate.momentMultiTimezone()
+  handleDate.diffTimestampValue()
 
   // handleMoment.test()
 
   // handleNumber.numberRounding()
 
-  testCondition.elementInArray()
-  testCondition.keyInObject()
+  // testCondition.elementInArray()
+  // testCondition.keyInObject()
 
   // usingLodash.parseInt()
   // usingLodash.isEmpty()

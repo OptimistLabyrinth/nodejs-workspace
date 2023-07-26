@@ -46,11 +46,45 @@ const momentMultiTimezone = () => {
   })
 }
 
+const diffTimestampValue = () => {
+  const moment01 = moment()
+  const date02 = new Date(moment01.toDate())
+  const moment02 = moment(moment01.unix() * 1000)
+
+  console.log({
+    moment01_____________: moment01.toDate(),
+    moment01Unix_________: moment01.unix(),
+    moment01Value________: moment01.valueOf(),
+    moment01Millisecond__: moment01.millisecond(),
+    moment01Milliseconds_: moment01.milliseconds(),
+    date02_______________: date02,
+    date02Time___________: date02.getTime(),
+    date02Value__________: date02.valueOf(),
+    moment02_____________: moment02.toDate(),
+    moment02Unix_________: moment02.unix(),
+  })
+
+  const num = 4001
+  const str = 'abc777'
+  const bigInt = BigInt(1234)
+  const arr = [ 1, 'b', { a: 3 } ]
+  const obj = { str: 'string', num: 'number' }
+
+  console.log({
+    num: num.valueOf(),
+    str: str.valueOf(),
+    bigInt: bigInt.valueOf(),
+    arr: arr.valueOf(),
+    obj: obj.valueOf(),
+  })
+}
+
 const handleDate = {
   setZeroSecondsZeroMilliseconds,
   setZero,
   addDays,
   momentMultiTimezone,
+  diffTimestampValue,
 }
 
 export default handleDate

@@ -5,6 +5,7 @@ import question from './utils/question'
 import confusedAsyncAndNonAsync from './something/confused-async-and-non-async'
 import handleArray from './something/handle-array'
 import handleDate from './something/handle-date'
+import handleJavascriptLogic from './something/handle-javascript-logic'
 import handleMoment from './something/handle-moment'
 import handleNumber from './something/handle-number'
 import testCondition from './something/test-condition'
@@ -35,7 +36,16 @@ async function main() {
   // handleDate.setZero()
   // handleDate.addDays()
   // handleDate.momentMultiTimezone()
-  handleDate.diffTimestampValue()
+  // handleDate.diffTimestampValue()
+
+  // handleJavascriptLogic.question01()
+  // handleJavascriptLogic.question02()
+  // handleJavascriptLogic.question03()
+  handleJavascriptLogic.question04()
+  // handleJavascriptLogic.question05()
+  // handleJavascriptLogic.question06()
+  // handleJavascriptLogic.question07()
+  // handleJavascriptLogic.question08()
 
   // handleMoment.test()
 

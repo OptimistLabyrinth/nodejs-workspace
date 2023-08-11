@@ -5,9 +5,10 @@ import question from './utils/question'
 import confusedAsyncAndNonAsync from './something/confused-async-and-non-async'
 import handleArray from './something/handle-array'
 import handleDate from './something/handle-date'
-import handleJavascriptLogic from './something/handle-javascript-logic'
+// import handleJavascriptLogic from './something/handle-javascript-logic'
 import handleMoment from './something/handle-moment'
 import handleNumber from './something/handle-number'
+import handleObject from './something/handle-object'
 import testCondition from './something/test-condition'
 import usingLodash from './something/using-lodash'
 
@@ -41,7 +42,7 @@ async function main() {
   // handleJavascriptLogic.question01()
   // handleJavascriptLogic.question02()
   // handleJavascriptLogic.question03()
-  handleJavascriptLogic.question04()
+  // handleJavascriptLogic.question04()
   // handleJavascriptLogic.question05()
   // handleJavascriptLogic.question06()
   // handleJavascriptLogic.question07()
@@ -50,6 +51,8 @@ async function main() {
   // handleMoment.test()
 
   // handleNumber.numberRounding()
+
+  handleObject.optionalChaining()
 
   // testCondition.elementInArray()
   // testCondition.keyInObject()

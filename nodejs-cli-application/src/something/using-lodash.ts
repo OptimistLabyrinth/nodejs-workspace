@@ -48,9 +48,23 @@ const isEmpty = () => {
   console.log({ result42 })
 }
 
+const find = () => {
+  const dict = {
+    k1: -1,
+    k2: 0,
+    k3: 1,
+  }
+  const arr = [ -1, 0, 1 ]
+  const value = 1
+  const foundFromDict = _.find(dict, (v) => v === value)
+  const foundFromArr = _.find(arr, (v) => v === value)
+  console.log({ foundFromDict, foundFromArr })
+}
+
 const usingLodash = {
   parseInt,
   isEmpty,
+  find,
 }
 
 export default usingLodash

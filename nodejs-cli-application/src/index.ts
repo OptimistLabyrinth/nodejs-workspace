@@ -52,13 +52,14 @@ async function main() {
 
   // handleNumber.numberRounding()
 
-  handleObject.optionalChaining()
+  // handleObject.optionalChaining()
 
   // testCondition.elementInArray()
   // testCondition.keyInObject()
 
   // usingLodash.parseInt()
   // usingLodash.isEmpty()
+  usingLodash.find()
 }
 
 main()

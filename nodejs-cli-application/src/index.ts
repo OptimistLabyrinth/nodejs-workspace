@@ -11,6 +11,7 @@ import handleNumber from './something/handle-number'
 import handleObject from './something/handle-object'
 import testCondition from './something/test-condition'
 import usingLodash from './something/using-lodash'
+import usingRegex from './something/using-regex'
 
 dotenv.config()
 
@@ -59,7 +60,9 @@ async function main() {
 
   // usingLodash.parseInt()
   // usingLodash.isEmpty()
-  usingLodash.find()
+  // usingLodash.find()
+
+  usingRegex.stringFollowedByDigits()
 }
 
 main()

@@ -17,35 +17,35 @@ const parseInt = () => {
 const isEmpty = () => {
   const value11 = ''
   const result11 = _.isEmpty(value11)
-  console.log({ result11 })
+  console.log({ value11, result11 })
 
   const value12 = '123'
   const result12 = _.isEmpty(value12)
-  console.log({ result12 })
+  console.log({ value12, result12 })
 
   const value21 = {}
   const result21 = _.isEmpty(value21)
-  console.log({ result21 })
+  console.log({ value21, result21 })
 
   const value22 = { a: 'something', b: 12345 }
   const result22 = _.isEmpty(value22)
-  console.log({ result22 })
+  console.log({ value22, result22 })
 
   const value31 = false
   const result31 = _.isEmpty(value31)
-  console.log({ result31 })
+  console.log({ value31, result31 })
 
   const value32 = true
   const result32 = _.isEmpty(value32)
-  console.log({ result32 })
+  console.log({ value32, result32 })
 
   const value41: unknown[] = []
   const result41 = _.isEmpty(value41)
-  console.log({ result41 })
+  console.log({ value41, result41 })
 
   const value42: unknown[] = [ 1, '2', { value: 3 } ]
   const result42 = _.isEmpty(value42)
-  console.log({ result42 })
+  console.log({ value42, result42 })
 }
 
 const find = () => {

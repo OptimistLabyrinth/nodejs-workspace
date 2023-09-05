@@ -5,12 +5,13 @@ import question from './utils/question'
 import confusedAsyncAndNonAsync from './something/confused-async-and-non-async'
 import handleArray from './something/handle-array'
 import handleDate from './something/handle-date'
-// import handleJavascriptLogic from './something/handle-javascript-logic'
+import handleJavascriptLogic from './something/handle-javascript-logic'
 import handleMoment from './something/handle-moment'
 import handleNumber from './something/handle-number'
 import handleObject from './something/handle-object'
 import testCondition from './something/test-condition'
 import usingLodash from './something/using-lodash'
+import usingMongoose from './something/using-mongoose'
 import usingRegex from './something/using-regex'
 
 dotenv.config()
@@ -62,7 +63,9 @@ async function main() {
   // usingLodash.isEmpty()
   // usingLodash.find()
 
-  usingRegex.stringFollowedByDigits()
+  usingMongoose.isValidObjectId()
+
+  // usingRegex.stringFollowedByDigits()
 }
 
 main()

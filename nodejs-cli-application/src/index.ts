@@ -9,6 +9,7 @@ import handleJavascriptLogic from './something/handle-javascript-logic'
 import handleMoment from './something/handle-moment'
 import handleNumber from './something/handle-number'
 import handleObject from './something/handle-object'
+import handleString from './something/handle-string'
 import testCondition from './something/test-condition'
 import usingLodash from './something/using-lodash'
 import usingMongoose from './something/using-mongoose'
@@ -56,6 +57,8 @@ async function main() {
 
   // handleObject.optionalChaining()
 
+  handleString.substring()
+
   // testCondition.elementInArray()
   // testCondition.keyInObject()
 
@@ -63,7 +66,7 @@ async function main() {
   // usingLodash.isEmpty()
   // usingLodash.find()
 
-  usingMongoose.isValidObjectId()
+  // usingMongoose.isValidObjectId()
 
   // usingRegex.stringFollowedByDigits()
 }

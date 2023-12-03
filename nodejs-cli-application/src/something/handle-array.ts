@@ -15,7 +15,9 @@ const filterArrayByProperty = () => {
     },
     {
       id: 'key-03',
-      data: [ 1, 2, 3, 4 ],
+      data: [
+        1, 2, 3, 4,
+      ],
     },
     {
       id: 'key-04',
@@ -33,7 +35,9 @@ const filterArrayByProperty = () => {
     },
     {
       id: 'key-03',
-      data: [ 1, 2, 3, 4 ],
+      data: [
+        1, 2, 3, 4,
+      ],
     },
     {
       id: 'key-04',
@@ -59,7 +63,9 @@ const filterArrayByProperty = () => {
 }
 
 const splice = () => {
-  const target = [ 'aaa', 'bbb', '123', '456', '!!', '**' ]
+  const target = [
+    'aaa', 'bbb', '123', '456', '!!', '**',
+  ]
   const stringToFind = '123'
   const indexRemoveStart = target.findIndex((value) => value === stringToFind)
   if (indexRemoveStart === -1) {
@@ -67,7 +73,10 @@ const splice = () => {
   }
   const removed = target.splice(indexRemoveStart, 2, '777', '888')
 
-  console.log(JSON.stringify({ target, removed }, null, 2))
+  console.log(JSON.stringify({
+    target,
+    removed,
+  }, null, 2))
 }
 
 const handleArray = {

@@ -5,8 +5,6 @@ const substring = () => {
   console.log(substr)
 }
 
-const handleString = {
-  substring,
-}
+const handleString = { substring }
 
 export default handleString

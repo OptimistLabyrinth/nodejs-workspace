@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/newline-per-chained-call */
 import request from 'supertest'
 import app from '../../../src/app'
 

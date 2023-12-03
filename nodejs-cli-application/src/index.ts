@@ -1,6 +1,9 @@
 import dotenv from 'dotenv'
 import greeting from './greeting'
-import { DecoratorTestClass, PropertyDecoratorTest } from './something/decorator'
+import {
+  DecoratorTestClass,
+  PropertyDecoratorTest,
+} from './something/decorator'
 import question from './utils/question'
 import confusedAsyncAndNonAsync from './something/confused-async-and-non-async'
 import handleArray from './something/handle-array'

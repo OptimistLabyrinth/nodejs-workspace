@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/newline-per-chained-call */
 import request from 'supertest'
 import app from '../../../src/app'
 
@@ -7,7 +8,7 @@ describe('v1 router', () => {
     expect(response.status).toBe(200)
     expect(response.type).toBe('application/json')
     expect(response.body).toHaveProperty('message')
-    const { message } = response.body
+    const { body: { message } } = response
     expect(message).toBe('Express + TypeScript Server')
   })
 })

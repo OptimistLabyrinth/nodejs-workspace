@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/newline-per-chained-call */
 import greeting from '../../src/greeting'
 
 describe('print hello 2', () => {

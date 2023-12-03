@@ -22,10 +22,17 @@ const isValidObjectId = () => {
     new ObjectId('zzzz9753qqqq'),
     new ObjectId('5555eeee6666ffff7777dddd'),
     new ObjectId('502625fc2af994e8fe8b6aab'),
-    new Uint8Array([ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 ]),
-    new Uint8Array([ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0xff ]),
+    new Uint8Array([
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+    ]),
+    new Uint8Array([
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0xff,
+    ]),
   ]
-  type EachCheckResult = { check: boolean, value: typeof valuesToCheck[number] }
+  type EachCheckResult = {
+    check: boolean
+    value: typeof valuesToCheck[number]
+  }
   const checkResults: EachCheckResult[] = valuesToCheck.map(
     (each) => ({
       check: mongoose.Types.ObjectId.isValid(each),
@@ -47,8 +54,6 @@ const isValidObjectId = () => {
   console.log(objectIds)
 }
 
-const usingMongoose = {
-  isValidObjectId,
-}
+const usingMongoose = { isValidObjectId }
 
 export default usingMongoose

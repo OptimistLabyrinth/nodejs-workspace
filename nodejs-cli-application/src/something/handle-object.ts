@@ -5,11 +5,11 @@ const optionalChaining = () => {
     num01?: number
     str01?: string
     nullV?: null
-    print?(): string
+    print?: () => string
     functionIncluded?: {
       today?: Date
       message?: string
-      print?(): () => string
+      print?: () => () => string
     }
   }
 
@@ -49,8 +49,6 @@ const optionalChaining = () => {
   console.log('JSON.stringify(result, null, 2):', JSON.stringify(result, null, 2))
 }
 
-const handleObject = {
-  optionalChaining,
-}
+const handleObject = { optionalChaining }
 
 export default handleObject

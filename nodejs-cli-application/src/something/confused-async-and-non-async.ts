@@ -2,13 +2,9 @@ import path from 'path'
 import { Worker } from 'worker_threads'
 
 export const main = async () => {
-  const fire = () => {
-    return 123
-  }
+  const fire = () => 123
 
-  const done = async () => {
-    return Promise.resolve(456)
-  }
+  const done = async () => Promise.resolve(456)
 
   const test1 = () => {
     const r1 = fire()
@@ -59,7 +55,9 @@ const parallelExecution = async () => {
   const result = await Promise.all([
     logMessage(30),
     logMessage('a9ndv'),
-    logMessage([ 1, 1, 2, 3, 5, 8, 13 ]),
+    logMessage([
+      1, 1, 2, 3, 5, 8, 13,
+    ]),
   ])
 
   console.log('----- parallelExecution ends -----')

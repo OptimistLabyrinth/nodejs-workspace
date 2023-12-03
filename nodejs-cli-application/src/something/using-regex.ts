@@ -24,15 +24,22 @@ const stringFollowedByDigits = () => {
   ]
   const customStr = 'custom_string'
   const regexCustomString = `^${customStr}_\\d+$`
-  type CheckResultEach = {value: string, check: boolean}
+  type CheckResultEach = {
+    value: string
+    check: boolean
+  }
   const checkCustomResult: CheckResultEach[] = arr.map((each) => ({
-    value: each, check: new RegExp(regexCustomString).exec(each) !== null,
+    value: each,
+    check: new RegExp(regexCustomString)
+      .exec(each) !== null,
   }))
   console.log(checkCustomResult)
 
   const regexAny = '.+_\\d+$'
   const checkAnyResult: CheckResultEach[] = arr.map((each) => ({
-    value: each, check: new RegExp(regexAny).exec(each) !== null,
+    value: each,
+    check: new RegExp(regexAny)
+      .exec(each) !== null,
   }))
   console.log(checkAnyResult)
 
@@ -41,8 +48,6 @@ const stringFollowedByDigits = () => {
   console.log(originalTitle)
 }
 
-const usingRegex = {
-  stringFollowedByDigits,
-}
+const usingRegex = { stringFollowedByDigits }
 
 export default usingRegex

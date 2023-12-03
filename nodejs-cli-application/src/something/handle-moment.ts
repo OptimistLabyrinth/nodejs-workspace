@@ -26,8 +26,6 @@ const test = () => {
   console.log(`specificIsoString: ${specificIsoString}`)
 }
 
-const handleMoment = {
-  test,
-}
+const handleMoment = { test }
 
 export default handleMoment

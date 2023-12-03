@@ -6,12 +6,10 @@ const numberRounding = () => {
   console.log(JSON.stringify({ divided }, null, 2))
 
   const decimalPlaces = 2
-  const rounded = Math.round(divided * Math.pow(10, decimalPlaces)) / Math.pow(10, decimalPlaces)
+  const rounded = Math.round(divided * 10 ** decimalPlaces) / 10 ** decimalPlaces
   console.log(JSON.stringify({ rounded }, null, 2))
 }
 
-const handleNumber = {
-  numberRounding,
-}
+const handleNumber = { numberRounding }
 
 export default handleNumber

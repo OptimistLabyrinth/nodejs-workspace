@@ -1,9 +1,7 @@
-function run(name: string) {
-  return 'hello ' + name
+function run(name: string): string {
+  return `hello ${name}`
 }
 
-const greeting = {
-  run,
-}
+const greeting = { run }
 
 export default greeting

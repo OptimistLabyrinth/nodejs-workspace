@@ -8,14 +8,13 @@ const question01 = () => {
   new Promise((res) => {
     console.log(3)
     res()
-  }).then(() => console.log(4))
+  })
+    .then(() => console.log(4))
 
   console.log(5)
 }
 
 const question02 = () => {
-  'use strict'
-
   function foo() {
     console.log(this)
   }
@@ -28,26 +27,32 @@ const question02 = () => {
     obj.foo()
   }
 
-  let obj = { foo }
+  const obj = { foo }
 
   callFoo(obj.foo)
   callObjFoo(obj)
 }
 
 const question03 = () => {
-  'use strict'
-
-  var x = 5
-  var y = 5
+  const x = 5
+  const y = 5
 
   function Operations(op1 = x, op2 = y) {
     this.x = op1
     this.y = op2
-    console.log({ op1, op2, 'this.x': this.x, 'this.y': this.y })
+    console.log({
+      op1,
+      op2,
+      'this.x': this.x,
+      'this.y': this.y,
+    })
   }
 
   Operations.prototype.sum = () => {
-    console.log({ 'this.x': this.x, 'this.y': this.y })
+    console.log({
+      'this.x': this.x,
+      'this.y': this.y,
+    })
     return this.x + this.y
   }
 
@@ -66,7 +71,7 @@ const question04 = () => {
   function Operations(coef) {
     return {
       sum: (...args) => arguments[0] + coef,
-      sumF: function (...args) {
+      sumF(...args) {
         return arguments[0] + coef
       },
     }
@@ -91,6 +96,7 @@ const question05 = () => {
 }
 
 const question06 = () => {
+  // eslint-disable-next-line
   'use strict'
 
   console.log(foo())
@@ -105,7 +111,7 @@ const question06 = () => {
 }
 
 const question07 = () => {
-  let func = function foo() {
+  const func = function foo() {
     return 'hello'
   }
 

@@ -33,9 +33,12 @@ const addDays = () => {
 const momentMultiTimezone = () => {
   const timezone = 'America/Phoenix'
   // const timezone = 'Asia/Seoul'
-  const time01 = moment('2023-07-05T02:30:00.000Z').tz(timezone)
-  const dayStart = moment(time01).startOf('date')
-  const dayEnd = moment(time01).endOf('date')
+  const time01 = moment('2023-07-05T02:30:00.000Z')
+    .tz(timezone)
+  const dayStart = moment(time01)
+    .startOf('date')
+  const dayEnd = moment(time01)
+    .endOf('date')
   console.log({
     'time01.toString()': time01.toString(),
     'time01.toDate()': time01.toDate(),
@@ -67,8 +70,13 @@ const diffTimestampValue = () => {
   const num = 4001
   const str = 'abc777'
   const bigInt = BigInt(1234)
-  const arr = [ 1, 'b', { a: 3 } ]
-  const obj = { str: 'string', num: 'number' }
+  const arr = [
+    1, 'b', { a: 3 },
+  ]
+  const obj = {
+    str: 'string',
+    num: 'number',
+  }
 
   console.log({
     num: num.valueOf(),

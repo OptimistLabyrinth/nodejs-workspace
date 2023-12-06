@@ -8,6 +8,7 @@ import question from './utils/question'
 import confusedAsyncAndNonAsync from './something/confused-async-and-non-async'
 import handleArray from './something/handle-array'
 import handleDate from './something/handle-date'
+import handleFiles from './something/handle-files'
 import handleJavascriptLogic from './something/handle-javascript-logic'
 import handleMoment from './something/handle-moment'
 import handleNumber from './something/handle-number'
@@ -45,6 +46,10 @@ async function main() {
   // handleDate.momentMultiTimezone()
   // handleDate.diffTimestampValue()
 
+  // await handleFiles.deleteFiles()
+  // await handleFiles.createFiles()
+  await handleFiles.renameFiles()
+
   // handleJavascriptLogic.question01()
   // handleJavascriptLogic.question02()
   // handleJavascriptLogic.question03()
@@ -60,7 +65,7 @@ async function main() {
 
   // handleObject.optionalChaining()
 
-  handleString.substring()
+  // handleString.substring()
 
   // testCondition.elementInArray()
   // testCondition.keyInObject()

@@ -39,6 +39,7 @@ async function main() {
 
   // handleArray.filterArrayByProperty()
   // handleArray.splice()
+  handleArray.accessByIndex()
 
   // handleDate.setZeroSecondsZeroMilliseconds()
   // handleDate.setZero()
@@ -48,7 +49,7 @@ async function main() {
 
   // await handleFiles.deleteFiles()
   // await handleFiles.createFiles()
-  await handleFiles.renameFiles()
+  // await handleFiles.renameFiles()
 
   // handleJavascriptLogic.question01()
   // handleJavascriptLogic.question02()

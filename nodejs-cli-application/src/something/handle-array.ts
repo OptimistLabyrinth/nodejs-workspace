@@ -79,9 +79,29 @@ const splice = () => {
   }, null, 2))
 }
 
+const accessByIndex = () => {
+  type Element = {
+    key: string
+    value: number
+  }
+  const arr1: [Element] = [
+    {
+      key: '',
+      value: 1,
+    },
+  ]
+  const arr2: Element[] = []
+
+  console.log(arr1[0].value)
+  // console.log(arr2[0].value) // ! TypeError: Cannot read properties of undefined (reading 'value')
+  console.log(arr2[0]?.value)
+  console.log(arr2[0]?.value ?? 0)
+}
+
 const handleArray = {
   filterArrayByProperty,
   splice,
+  accessByIndex,
 }
 
 export default handleArray

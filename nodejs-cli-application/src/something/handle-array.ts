@@ -98,10 +98,66 @@ const accessByIndex = () => {
   console.log(arr2[0]?.value ?? 0)
 }
 
+const arrayAsMap = <Key, Value>(
+  arr: {
+    key: Key
+    value: Value
+  }[],
+): Map<Key, Set<Value>> => arr.reduce((acc, current) => {
+  if (!acc.get(current.key)) {
+    acc.set(current.key, new Set<Value>())
+  }
+  acc.get(current.key)
+    ?.add(current.value)
+  return acc
+}, new Map<Key, Set<Value>>())
+
+const convertArrayOfPairToMapOfKey = () => {
+  const arr: {
+    key: string
+    value: string
+  }[] = [
+    {
+      key: '1234',
+      value: 'ha ha ha',
+    },
+    {
+      key: '1234',
+      value: 'what is your name',
+    },
+    {
+      key: '1234',
+      value: 'personal message',
+    },
+    {
+      key: '1234',
+      value: 'maybe having fun ',
+    },
+    {
+      key: '2345',
+      value: '!!!',
+    },
+    {
+      key: '2345',
+      value: '....',
+    },
+    {
+      key: '2345',
+      value: '""""',
+    },
+    {
+      key: '2345',
+      value: '~~~~',
+    },
+  ]
+  console.log(arrayAsMap(arr))
+}
+
 const handleArray = {
   filterArrayByProperty,
   splice,
   accessByIndex,
+  convertArrayOfPairToMapOfKey,
 }
 
 export default handleArray

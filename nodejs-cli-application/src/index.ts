@@ -39,7 +39,8 @@ async function main() {
 
   // handleArray.filterArrayByProperty()
   // handleArray.splice()
-  handleArray.accessByIndex()
+  // handleArray.accessByIndex()
+  handleArray.convertArrayOfPairToMapOfKey()
 
   // handleDate.setZeroSecondsZeroMilliseconds()
   // handleDate.setZero()

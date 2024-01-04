@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 type EachData = {
   id: string
   data: unknown
@@ -153,11 +155,86 @@ const convertArrayOfPairToMapOfKey = () => {
   console.log(arrayAsMap(arr))
 }
 
+const makeArrayUnique = () => {
+  const strings = [
+    '1', '22', 'xx', 'bbq', 'right',
+    '1', '22', '333', '!!', 'left',
+  ]
+  const stringsUnique = _.uniq(strings)
+  console.log('stringsUnique', stringsUnique)
+
+  type Key = {
+    key: number
+    value: number
+  }
+  const pairs: Key[] = [
+    {
+      key: 1,
+      value: 1,
+    },
+    {
+      key: 2,
+      value: 2,
+    },
+    {
+      key: 3,
+      value: 1,
+    },
+    {
+      key: 4,
+      value: 2,
+    },
+    {
+      key: 5,
+      value: 3,
+    },
+    {
+      key: 6,
+      value: 999,
+    },
+  ]
+  const pairsUnique = _.uniqBy(pairs, 'value')
+  console.log('pairsUnique', pairsUnique)
+
+  type Each = {
+    id: number
+    title: string
+  }
+  const objects: Each[] = [
+    {
+      id: 1,
+      title: 'joyful day',
+    },
+    {
+      id: 2,
+      title: 'gloomy sunday',
+    },
+    {
+      id: 3,
+      title: 'payment due date',
+    },
+    {
+      id: 1,
+      title: 'joyful day',
+    },
+    {
+      id: 2,
+      title: 'gloomy sunday',
+    },
+  ]
+  const objectsUnique = _.uniqWith(
+    objects,
+    (x, y) => x.id === y.id && x.title === y.title,
+  )
+  console.log('objectsUnique', objectsUnique)
+}
+
 const handleArray = {
   filterArrayByProperty,
   splice,
   accessByIndex,
   convertArrayOfPairToMapOfKey,
+  makeArrayUnique,
 }
 
 export default handleArray

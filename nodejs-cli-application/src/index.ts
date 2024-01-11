@@ -15,6 +15,7 @@ import handleNumber from './something/handle-number'
 import handleObject from './something/handle-object'
 import handleString from './something/handle-string'
 import testCondition from './something/test-condition'
+import usingClosure from './something/using-closure'
 import usingLodash from './something/using-lodash'
 import usingMongoose from './something/using-mongoose'
 import usingRegex from './something/using-regex'
@@ -41,7 +42,7 @@ async function main() {
   // handleArray.splice()
   // handleArray.accessByIndex()
   // handleArray.convertArrayOfPairToMapOfKey()
-  handleArray.makeArrayUnique()
+  // handleArray.makeArrayUnique()
 
   // handleDate.setZeroSecondsZeroMilliseconds()
   // handleDate.setZero()
@@ -72,6 +73,8 @@ async function main() {
 
   // testCondition.elementInArray()
   // testCondition.keyInObject()
+
+  usingClosure.getSet()
 
   // usingLodash.parseInt()
   // usingLodash.isEmpty()

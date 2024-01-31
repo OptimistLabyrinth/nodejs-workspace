@@ -68,13 +68,14 @@ async function main() {
   // handleNumber.numberRounding()
 
   // handleObject.optionalChaining()
+  handleObject.spreadNestedObject()
 
   // handleString.substring()
 
   // testCondition.elementInArray()
   // testCondition.keyInObject()
 
-  usingClosure.getSet()
+  // usingClosure.getSet()
 
   // usingLodash.parseInt()
   // usingLodash.isEmpty()

@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-const optionalChaining = () => {
+const optionalChaining = (): void => {
   type MyObject = {
     num01?: number
     str01?: string
@@ -49,6 +49,45 @@ const optionalChaining = () => {
   console.log('JSON.stringify(result, null, 2):', JSON.stringify(result, null, 2))
 }
 
-const handleObject = { optionalChaining }
+const spreadNestedObject = (): void => {
+  const obj = {
+    a: 1,
+    b: 'two',
+    c: {
+      nice: 'work',
+      good: 'job',
+      grade: 99,
+    },
+  }
+  const spreadObj = { ...obj }
+
+  console.log(JSON.stringify({
+    obj,
+    spreadObj,
+  }, null, 2))
+
+  spreadObj.a = 91
+  spreadObj.c.nice = 'well done'
+
+  console.log(JSON.stringify({
+    obj,
+    spreadObj,
+  }, null, 2))
+
+  const deepClonedObj = _.cloneDeep(spreadObj)
+
+  deepClonedObj.b = 'hahah'
+  deepClonedObj.c.good = 'idea, I like that!'
+
+  console.log(JSON.stringify({
+    spreadObj,
+    deepClonedObj,
+  }, null, 2))
+}
+
+const handleObject = {
+  optionalChaining,
+  spreadNestedObject,
+}
 
 export default handleObject
